@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="cluttered_obstacles_hardware">
+  <link name="base_link" />
+  <link name="obstacle1">
+    <inertial>
+      <origin xyz="-0.127 1.2333 0.262" rpy="0 0 0" />
+      <mass value="999999999999999999999999999.0" />
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.127 1.2333 0.262" rpy="0 0 0" />
+      <geometry>
+        <box size="0.254 0.254 1.524" />
+      </geometry>
+      <material name="obstacle1_color">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.127 1.2333 0.262" rpy="0 0 0" />
+      <geometry>
+        <box size="0.254 0.254 1.524" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1_obstacle1" type="fixed">
+    <parent link="base_link" />
+    <child link="obstacle1" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="obstacle2">
+    <inertial>
+      <origin xyz="0.2794 1.8683 0.262" rpy="0 0 0" />
+      <mass value="999999999999999999999999999.0" />
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="0.2794 1.8683 0.262" rpy="0 0 0" />
+      <geometry>
+        <box size="0.254 0.254 1.524" />
+      </geometry>
+      <material name="obstacle2_color">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.2794 1.8683 0.262" rpy="0 0 0" />
+      <geometry>
+        <box size="0.254 0.254 1.524" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2_obstacle2" type="fixed">
+    <parent link="base_link" />
+    <child link="obstacle2" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="obstacle3">
+    <inertial>
+      <origin xyz="-0.2794 2.9224 0.262" rpy="0 0 0" />
+      <mass value="999999999999999999999999999.0" />
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.2794 2.9224 0.262" rpy="0 0 0" />
+      <geometry>
+        <box size="0.254 0.254 1.524" />
+      </geometry>
+      <material name="obstacle3_color">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.2794 2.9224 0.262" rpy="0 0 0" />
+      <geometry>
+        <box size="0.254 0.254 1.524" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3_obstacle3" type="fixed">
+    <parent link="base_link" />
+    <child link="obstacle3" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,243 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="folding_drone_obstacle1">
+    <!-- Current propeller size 140 mm wide - becomes drone width -->
+    <!-- normal drone size a 442 mm wide -->
+    
+    <static>true</static>
+    <link name="link1">
+      <pose>1.165 1.4 1.0 0 0 0</pose>
+      <collision name="collision1">
+        <geometry>
+          <box>
+            <size>2.0 0.254 3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual1">
+        <geometry>
+          <box>
+            <size>2.0 0.254 3</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link2">
+      <pose>-0.417 1.4 1.0 0 0 0</pose>
+      <collision name="collision2">
+        <geometry>
+          <box>
+            <size>0.504 0.254 3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual2">
+        <geometry>
+          <box>
+            <size>0.504 0.254 3</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link2cb">
+      <pose>0.0 1.4 0.0 0 0 0</pose>
+      <collision name="collision2cb">
+        <geometry>
+          <box>
+            <size>0.33 0.254 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual2cb">
+        <geometry>
+          <box>
+            <size>0.33 0.254 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link2ct">
+      <pose>0.0 1.4 2.0 0 0 0</pose>
+      <collision name="collision2ct">
+        <geometry>
+          <box>
+            <size>0.33 0.254 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual2ct">
+        <geometry>
+          <box>
+            <size>0.33 0.254 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    
+    <link name="unknown_obstacle">
+      <pose>0.0 4.4 1.0 0 0 0</pose>
+      <collision name="collisionunknown_obstacle">
+        <geometry>
+          <box>
+            <size>0.2 0.2 3</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visualunknown_obstacle">
+        <geometry>
+          <box>
+            <size>0.2 0.2 3</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient>
+          <diffuse>0 1 0 1.0</diffuse> 
+        </material>
+      </visual>
+    </link>
+
+
+    <link name="link3">
+      <pose>-0.452 3.497 1.0 0 0 0</pose> <!-- Centered at x=3.0, y=2.0, with its lowest point at z=0.0 -->
+      <collision name="collision3">
+        <geometry>
+          <box>
+            <size>2.75 0.254 3.0</size> <!-- Size in x=10 inches, y=10 inches, z=3 m -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual3">
+        <geometry>
+          <box>
+            <size>2.75 0.254 3.0</size> <!-- Size in x=10 inches, y=10 inches, z=3 m -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link4">
+      <pose>2.038 5.3215 1.0 0 0 0</pose> <!-- Positioned at x=5 m, y=3 m, with its bottom touching the floor -->
+      <collision name="collision4">
+        <geometry>
+          <box>
+            <size>0.254 8.097 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual4">
+        <geometry>
+          <box>
+            <size>0.254 8.097 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link5">
+      <pose>-0.54 2.450 1.0 0 0 0</pose> <!-- Positioned at x=5 m, y=3 m, with its bottom touching the floor -->
+      <collision name="collision5">
+        <geometry>
+          <box>
+            <size>0.254 2.354 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual5">
+        <geometry>
+          <box>
+            <size>0.254 2.354 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link6">
+      <pose>0.53 5.297 1.0 0 0 0</pose> <!-- Positioned at x=5 m, y=3 m, with its bottom touching the floor -->
+      <collision name="collision6">
+        <geometry>
+          <box>
+            <size>3.270 0.254 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual6">
+        <geometry>
+          <box>
+            <size>3.270 0.254 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link7">
+      <pose>-1.7 6.37 1.0 0 0 0</pose> <!-- Positioned at x=5 m, y=3 m, with its bottom touching the floor -->
+      <collision name="collision7">
+        <geometry>
+          <box>
+            <size>0.254 6.0 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual7">
+        <geometry>
+          <box>
+            <size>0.254 6.0 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+    <link name="link8">
+      <pose>0.169 9.24454 1.0 0 0 0</pose> <!-- Positioned at x=5 m, y=3 m, with its bottom touching the floor -->
+      <collision name="collision8">
+        <geometry>
+          <box>
+            <size>3.992 0.254 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual8">
+        <geometry>
+          <box>
+            <size>3.992 0.254 3.0</size> <!-- Size in x=4 m, y=0.254 m, z=3 m -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> <!-- 100% opacity -->
+          <diffuse>0 1 0 1.0</diffuse> <!-- 100% opacity -->
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

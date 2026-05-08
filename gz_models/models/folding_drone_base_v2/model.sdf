@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+
+  <!-- in version 2, only changed moment of inertias and masses and propellers xy locations, rest things have been kept same as version 1-->
+  
+  <model name='folding_drone_base_v2'>
+    <pose>0 0 0 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <mass>1.19253</mass>
+        <!-- <pose>0 0 -0.0756 0 0 0</pose> June 26, 2024-->
+        <pose>0.00 0.0 -0.02258 0 0 0</pose>
+        <inertia>
+          <ixx>0.0068</ixx>
+          <ixy>-0.0041</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0068</iyy>
+          <iyz>0</iyz>
+          <izz>0.0099</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <velocity_decay/>
+      <visual name="base_link_visual">
+        <!-- <pose>0.22 -0.145 .025 -1.57079632679 0 2.3561944905</pose> June 26, 2024-->   
+        <pose>0.0 0.0 0 0.0 0 1.57</pose>
+        <transparency>0.1</transparency>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://folding_drone_base_v2/meshes/main_assembly_2.0_bottom_half_m_donottranslate.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <collision name="base_link_collision_0">
+        <pose>0 0 0 0 0 0.78539816339</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.13 0.08</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="base_link_collision_1">
+        <pose>0.03 -0.03 -.058 -0.25 0 0.78</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.015 0.045</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="base_link_collision_2">
+        <pose>-0.03 0.03 -.058 0.25 0 0.78</pose>
+        <geometry>
+          <box>
+            <size>0.015 0.015 0.045</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="base_link_collision_3">
+        <pose>0.04 -0.04 -.0795 0 0 0.78</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.015 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name="base_link_collision_4">
+        <pose>-0.04 0.04 -.0795 0 0 0.78</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.015 0.015</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      
+      <sensor name="air_pressure_sensor" type="air_pressure">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <air_pressure>
+          <pressure>
+            <noise type="gaussian">
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </pressure>
+        </air_pressure>
+      </sensor>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00018665</stddev>
+                <dynamic_bias_stddev>3.8785e-05</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>1000</dynamic_bias_correlation_time>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00018665</stddev>
+                <dynamic_bias_stddev>3.8785e-05</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>1000</dynamic_bias_correlation_time>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00018665</stddev>
+                <dynamic_bias_stddev>3.8785e-05</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>1000</dynamic_bias_correlation_time>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00186</stddev>
+                <dynamic_bias_stddev>0.006</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300</dynamic_bias_correlation_time>
+              </noise>
+            </x>
+            <y>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00186</stddev>
+                <dynamic_bias_stddev>0.006</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300</dynamic_bias_correlation_time>
+              </noise>
+            </y>
+            <z>
+              <noise type="gaussian">
+                <mean>0</mean>
+                <stddev>0.00186</stddev>
+                <dynamic_bias_stddev>0.006</dynamic_bias_stddev>
+                <dynamic_bias_correlation_time>300</dynamic_bias_correlation_time>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+      </sensor>
+            <sensor name='gpu_lidar' type='gpu_lidar'>"
+        <pose relative_to='lidar_frame'>0 0 0 0 0 0</pose>
+        <topic>model/folding_drone/lidar</topic>
+        <update_rate>10</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>502</samples>
+                    <resolution>1</resolution>
+                    <min_angle>0</min_angle>
+                    <max_angle>6.2831854820251465</max_angle>
+                </horizontal>
+                <vertical>
+                    <samples>1</samples>
+                    <resolution>1</resolution>
+                    <min_angle>0.0</min_angle>
+                    <max_angle>0.0</max_angle>
+                </vertical>
+            </scan>
+            <range>
+                <min>0.02</min>
+                <max>12.0</max>
+                <resolution>0.01</resolution>
+            </range>
+            <!-- <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise> -->
+        </ray>
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+    </sensor>
+      
+    </link>
+    
+    <frame name="lidar_frame" attached_to='base_link'>  <!-- added for lidar -->
+      <pose>0.0 0 0.13 0 0 1.57</pose>
+    </frame>
+
+    <link name="upper_arm">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay/>
+      <!-- <pose>-0.175 -0.215 0.075 -1.57079632679 -0.05 0.78539816339</pose> -->
+      <pose>-0.00 0.0 0 0 0 0.78539816339</pose>
+      <inertial>
+        <mass>0.38548</mass>
+        <!-- <pose>0.21 0.0 0.0 0 0 0</pose> -->
+        <pose>0 0 0.058 0 0 0</pose>
+        <inertia>
+          <ixx>0.0037</ixx>
+          <ixy>0.0035</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0037</iyy>
+          <iyz>0</iyz>
+          <izz>0.0072</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <velocity_decay/>
+      <visual name="upper_arm_visual">
+        <!-- <pose>-0.175 -0.215 0.075 -1.57079632679 -0.05 0.78539816339</pose> June 26, 2024-->
+        <transparency>0.1</transparency>
+        <pose>0.0 0.0 0 0 0 1.57</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://folding_drone_base_v2/meshes/main_assembly_2.0_top_half_m_donottranslate.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <collision name="upper_arm_collision">
+        <pose>0 0 0.09 0 0 -0.78539816339</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.06 0.08</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+
+    </link>
+    <joint name="upper_arm_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>upper_arm</child>
+      <!-- <pose>-0.15 0.15 .013 0.0 0 0.0</pose> -->
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- 0/+90 deg. -->
+          <lower>-0.78539816339</lower>
+          <upper>0.78539816339</upper>
+          <effort>1.8639</effort>
+        </limit>
+        
+        <dynamics>
+          <damping>1.000</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+      <!-- <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis> -->
+    </joint>
+    <link name="rotor_0">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay/>
+      <pose>0.24131 0.0 0.095 0 -0.4369 0</pose>
+      <!-- <pose>0.21645 0.0 0.02145 0 -0.4369 0</pose> -->
+      <inertial>
+          <mass>0.00386</mass>
+          <inertia>
+            <ixx>0.4284e-05</ixx>
+            <iyy>0.0044e-05</iyy>
+            <izz>0.4300e-05</izz>
+          </inertia>
+      </inertial>
+      <visual name="rotor_0_visual">
+        <!-- <pose>-0.012 0.09900545554 -0.016 1.57079632679 0 0</pose> -->
+        <pose>-0.007 0.06994 -0.00375 1.57079632679 0 0</pose>
+        <geometry>
+          <mesh>
+            <!-- <scale>0.00141025641 0.00141025641 0.00141025641</scale> -->
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://folding_drone_base/meshes/5045_propeller_CW.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <collision name="rotor_0_collision">
+        <pose>0 0 0 0 0 1.57079632679 </pose>
+        <geometry>
+          <box>
+            <size>0.1592307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="rotor_0_joint" type="revolute">
+      <parent>upper_arm</parent>
+      <child>rotor_0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_1">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay/>
+      <pose>-0.24131 0.0 0.095 0 0.4369 0</pose>
+      <!-- <pose>-0.21645 0.0 0.02145 0 0.4369 0</pose> -->
+      <inertial>
+          <mass>0.00386</mass>
+          <inertia>
+            <ixx>0.4284e-05</ixx>
+            <iyy>0.0044e-05</iyy>
+            <izz>0.4300e-05</izz>
+          </inertia>
+        </inertial>
+      <visual name="rotor_1_visual">
+        <pose>-0.007 0.06994 -0.00375 1.57079632679 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://folding_drone_base/meshes/5045_propeller_CW.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <collision name="rotor_1_collision">
+        <pose>0 0 0 0 0 1.57079632679 </pose>
+        <geometry>
+          <box>
+            <size>0.1592307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="rotor_1_joint" type="revolute">
+      <parent>upper_arm</parent>
+      <child>rotor_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_2">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay/>
+      <pose>0.17063 0.17063 0.03745 0.4369 0 -0.7854</pose>
+      <!-- <pose>0.1571332 0.16542056 0.02145 0 0 0</pose> --> <!-- for checking no tilt-->
+      <inertial>
+          <mass>0.00386</mass>
+          <inertia>
+            <ixx>0.4284e-05</ixx>
+            <iyy>0.0044e-05</iyy>
+            <izz>0.4300e-05</izz>
+          </inertia>
+        </inertial>
+      <visual name="rotor_2_visual">
+        <pose>-0.007 0.06994 -0.00375 1.57079632679 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://folding_drone_base/meshes/5045_propeller_CCW.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <collision name="rotor_2_collision">
+        <pose>0 0 0 0 0 1.57079632679 </pose>
+        <geometry>
+          <box>
+            <size>0.1592307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="rotor_2_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_3">
+      <gravity>true</gravity>
+      <self_collide>false</self_collide>
+      <velocity_decay/>
+      <pose>-0.17063 -0.17063 0.03745 -0.4369 0 -0.7854</pose>
+      <!-- <pose>-0.1473327689280 -0.1380272436876 0.02145 0 0 0</pose> -->  <!-- for checking no tilt-->
+      <inertial>
+          <mass>0.00386</mass>
+          <inertia>
+            <ixx>0.4284e-05</ixx>
+            <iyy>0.0044e-05</iyy>
+            <izz>0.4300e-05</izz>
+          </inertia>
+        </inertial>
+      <visual name="rotor_3_visual">
+        <pose>-0.007 0.06994 -0.00375 1.57079632679 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://folding_drone_base/meshes/5045_propeller_CCW.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <collision name="rotor_3_collision">
+        <pose>0 0 0 0 0 1.57079632679 </pose>
+        <geometry>
+          <box>
+            <size>0.1592307692307692 0.016923076923076923 0.0008461538461538462</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <max_vel>0</max_vel>
+            </ode>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name="rotor_3_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rotor_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+  </model>
+</sdf>

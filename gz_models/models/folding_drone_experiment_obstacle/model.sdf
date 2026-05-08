@@ -1,0 +1,135 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="folding_drone_experiment_obstacle">
+    <!-- Current propeller size 140 mm wide - becomes drone width -->
+    <!-- normal drone size a 442 mm wide -->
+    
+    <static>true</static>
+    <link name="link1">
+      <pose>0.28575 1.4 0.4398 0 0 0</pose>
+      <collision name="collision1">
+        <geometry>
+          <box>
+            <size>0.254 0.254 1.8796</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual1">
+        <geometry>
+          <box>
+            <size>0.254 0.254 1.8796</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> 
+          <diffuse>0 1 0 1.0</diffuse> 
+        </material>
+      </visual>
+    </link>
+    <link name="link2">
+      <pose>-0.28575 1.4 0.4398 0 0 0</pose>
+      <collision name="collision2">
+        <geometry>
+          <box>
+            <size>0.254 0.254 1.8796</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual2">
+        <geometry>
+          <box>
+            <size>0.254 0.254 1.8796</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> 
+          <diffuse>0 1 0 1.0</diffuse> 
+        </material>
+      </visual>
+    </link>
+    <!-- <link name="link3">
+      <pose>0.0 1.4 -0.0682 0 0 0</pose>
+      <collision name="collision3">
+        <geometry>
+          <box>
+            <size>0.3175 0.254 0.8636</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual3">
+        <geometry>
+          <box>
+            <size>0.3175 0.254 0.8636</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> 
+          <diffuse>0 1 0 1.0</diffuse> 
+        </material>
+      </visual>
+    </link>
+    <link name="link4">
+      <pose>0.0 1.4 1.1764 0 0 0</pose>
+      <collision name="collision4">
+        <geometry>
+          <box>
+            <size>0.3175 0.254 0.4064</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual4">
+        <geometry>
+          <box>
+            <size>0.3175 0.254 0.4064</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 0 1.0</ambient> 
+          <diffuse>0 1 0 1.0</diffuse> 
+        </material>
+      </visual>
+    </link> -->
+    <link name="link5">
+      <pose>5.41275 1.4 0.4398 0 0 0</pose>
+      <collision name="collision5">
+        <geometry>
+          <box>
+            <size>10.0 0.254 1.8796</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual5">
+        <geometry>
+          <box>
+            <size>10.0 0.254 1.8796</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 1 1.0</ambient>
+          <diffuse>0 1 1 1.0</diffuse> 
+        </material>
+      </visual>
+    </link>
+    <link name="link6">
+      <pose>-5.41275 1.4 0.4398 0 0 0</pose>
+      <collision name="collision6">
+        <geometry>
+          <box>
+            <size>10.0 0.254 1.8796</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual6">
+        <geometry>
+          <box>
+            <size>10.0 0.254 1.8796</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 1 1 1.0</ambient> 
+          <diffuse>0 1 1 1.0</diffuse> 
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,204 @@
+<robot name="folding_drone_base_v2">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00 0.0 -0.02258" rpy="0 0 0"/>
+      <mass value="99.19253"/>
+      <inertia ixx="0.0075" ixy="-0.0058" ixz="0" iyy="0.0075" iyz="0" izz="0.0136"/>
+    </inertial>
+    <visual name="base_link_visual">
+      <origin xyz="0.0 0.0 0" rpy="0.0 0 1.57"/>
+      <geometry>
+        <mesh filename="model://folding_drone_base_v2/meshes/main_assembly_2.0_bottom_half_m_donottranslate.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1.0"/>
+      </material>
+    </visual>
+    <collision name="base_link_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0.78539816339"/>
+      <geometry>
+        <box size="0.5 0.13 0.08"/>
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_1">
+      <origin xyz="0.03 -0.03 -.058" rpy="-0.25 0 0.78"/>
+      <geometry>
+        <box size="0.015 0.015 0.045"/>
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_2">
+      <origin xyz="-0.03 0.03 -.058" rpy="0.25 0 0.78"/>
+      <geometry>
+        <box size="0.015 0.015 0.045"/>
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_3">
+      <origin xyz="0.04 -0.04 -.0795" rpy="0 0 0.78"/>
+      <geometry>
+        <box size="0.25 0.015 0.015"/>
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_4">
+      <origin xyz="-0.04 0.04 -.0795" rpy="0 0 0.78"/>
+      <geometry>
+        <box size="0.25 0.015 0.015"/>
+      </geometry>
+    </collision>
+  </link>
+
+ <link name="upper_arm">
+    <inertial>
+      <origin xyz="0 0 0.058" rpy="0 0 0"/>
+      <mass value="0.38548"/>
+      <inertia ixx="0.0051" ixy="0.0049" ixz="0" iyy="0.0051" iyz="0" izz="0.0102"/>
+    </inertial>
+    <visual name="upper_arm_visual">
+      <origin xyz="0.0 0.0 0" rpy="0 0 1.57"/>
+      <geometry>
+        <mesh filename="model://folding_drone_base_v2/meshes/main_assembly_2.0_top_half_m_donottranslate.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1.0"/>
+      </material>
+    </visual>
+    <collision name="upper_arm_collision">
+      <origin xyz="0 0 0.09" rpy="0 0 -0.78539816339"/>
+      <geometry>
+        <box size="0.5 0.06 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="upper_arm_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="upper_arm"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0.0" upper="1.57" effort="1.8639"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="rotor_0">
+    <inertial>
+      <origin xyz="0.24131 0.0 0.095" rpy="0 -0.4369 0"/>
+      <mass value="0.00386"/>
+      <inertia ixx="0.4284e-05" ixy="0.0044e-05" ixz="0" iyy="0.0044e-05" iyz="0" izz="0.4300e-05"/>
+    </inertial>
+    <visual name="rotor_0_visual">
+      <origin xyz="-0.007 0.06994 -0.00375" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <mesh filename="model://folding_drone_base/meshes/5045_propeller_CW.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey">
+        <color rgba="0.25 0.25 0.25 1.0"/>
+      </material>
+    </visual>
+    <collision name="rotor_0_collision">
+      <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
+      <geometry>
+        <box size="0.1592307692307692 0.016923076923076923 0.0008461538461538462"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor_0_joint" type="revolute">
+    <parent link="upper_arm"/>
+    <child link="rotor_0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" effort="1.8639" velocity="1.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="rotor_1">
+    <inertial>
+      <origin xyz="-0.24131 0.0 0.095" rpy="0 0.4369 0"/>
+      <mass value="0.00386"/>
+      <inertia ixx="0.4284e-05" ixy="0.0044e-05" ixz="0" iyy="0.0044e-05" iyz="0" izz="0.4300e-05"/>
+    </inertial>
+    <visual name="rotor_1_visual">
+      <origin xyz="-0.007 0.06994 -0.00375" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <mesh filename="model://folding_drone_base/meshes/5045_propeller_CW.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey">
+        <color rgba="0.25 0.25 0.25 1.0"/>
+      </material>
+    </visual>
+    <collision name="rotor_1_collision">
+      <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
+      <geometry>
+        <box size="0.1592307692307692 0.016923076923076923 0.0008461538461538462"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor_1_joint" type="revolute">
+    <parent link="upper_arm"/>
+    <child link="rotor_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" effort="1.8639" velocity="1.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="rotor_2">
+    <inertial>
+      <origin xyz="0.17063 0.17063 0.03745" rpy="0.4369 0 -0.7854"/>
+      <mass value="0.00386"/>
+      <inertia ixx="0.4284e-05" ixy="0.0044e-05" ixz="0" iyy="0.0044e-05" iyz="0" izz="0.4300e-05"/>
+    </inertial>
+    <visual name="rotor_2_visual">
+      <origin xyz="-0.007 0.06994 -0.00375" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <mesh filename="model://folding_drone_base/meshes/5045_propeller_CCW.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey">
+        <color rgba="0.25 0.25 0.25 1.0"/>
+      </material>
+    </visual>
+    <collision name="rotor_2_collision">
+      <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
+      <geometry>
+        <box size="0.1592307692307692 0.016923076923076923 0.0008461538461538462"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor_2_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="rotor_2"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" effort="1.8639" velocity="1.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="rotor_3">
+    <inertial>
+      <origin xyz="-0.17063 -0.17063 0.03745" rpy="-0.4369 0 -0.7854"/>
+      <mass value="0.00386"/>
+      <inertia ixx="0.4284e-05" ixy="0.0044e-05" ixz="0" iyy="0.0044e-05" iyz="0" izz="0.4300e-05"/>
+    </inertial>
+    <visual name="rotor_3_visual">
+      <origin xyz="-0.007 0.06994 -0.00375" rpy="1.57079632679 0 0"/>
+      <geometry>
+        <mesh filename="model://folding_drone_base/meshes/5045_propeller_CCW.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_grey">
+        <color rgba="0.25 0.25 0.25 1.0"/>
+      </material>
+    </visual>
+    <collision name="rotor_3_collision">
+      <origin xyz="0 0 0" rpy="0 0 1.57079632679"/>
+      <geometry>
+        <box size="0.1592307692307692 0.016923076923076923 0.0008461538461538462"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor_3_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="rotor_3"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" effort="1.8639" velocity="1.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+</robot>

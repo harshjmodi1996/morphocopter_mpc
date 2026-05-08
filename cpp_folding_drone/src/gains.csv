@@ -1,0 +1,21 @@
+# Attitude controller gain tuning file
+# Edit values and restart the node — no recompilation needed.
+# Lines starting with '#' are ignored.
+# Units: gains are dimensionless, mass in kg, tilt_limit_deg in degrees, thrust_limit in N.
+#
+# Kp  = proportional gain
+# Kv  = derivative gain  = Kp * Td  (Td = derivative time constant)
+# Ki  = integral gain    = Kp / Ti  (Ti = integral time constant)
+parameter,value
+Kpx,3.0
+Kpy,3.0
+Kpz,5.0
+Tdx,0.9
+Tdy,0.9
+Tdz,0.7
+Tix,10.0
+Tiy,10.0
+Tiz,2.0
+mass,1.85
+tilt_limit_deg,30.0
+thrust_limit,10000.0

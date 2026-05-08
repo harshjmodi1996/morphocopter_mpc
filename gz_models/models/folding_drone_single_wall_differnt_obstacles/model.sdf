@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+
+  <!-- in version 2, only changed moment of inertias and masses and propellers xy locations, rest things have been kept same as version 1-->
+  
+  
+
+  <model name='folding_drone_single_wall_differnt_obstacles'>
+    <static>true</static>
+    <link name="wall">
+      <visual name="wall_visual">
+        <pose>-1 2 -0.5 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/1_gap_slope_curve_horizontal.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/2_gap_slope_horizontal.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/3_gap_slope_vertical.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/4_gap_slope_curve_horizontal_second.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/5_gap_slope_vertical_second.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/6_gap_slope_horizontal_vertical.STL</uri> -->
+
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/v1_gap_slope_curve_horizontal.STL</uri> -->
+            <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/v2_gap_slope_horizontal.STL</uri>
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/v3_gap_slope_vertical.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/v4_gap_slope_curve_horizontal_second.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/v5_gap_slope_vertical_second.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/v6_gap_slope_horizontal_vertical.STL</uri> -->
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+        </material>
+      </visual>
+      <!-- <collision name="wall_collision">
+      <pose>-1 2 -0.5 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/1_gap_slope_curve_horizontal.STL</uri> -->
+            <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/2_gap_slope_horizontal.STL</uri>
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/3_gap_slope_vertical.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/4_gap_slope_curve_horizontal_second.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/5_gap_slope_vertical_second.STL</uri> -->
+            <!-- <uri>model://folding_drone_single_wall_differnt_obstacles/meshes/6_gap_slope_horizontal_vertical.STL</uri> -->
+          <!-- </mesh>
+        </geometry>
+      </collision> -->
+    </link>
+  </model>
+</sdf>
