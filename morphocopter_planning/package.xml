@@ -4,7 +4,7 @@
   <name>morphocopter_planning</name>
   <version>0.0.0</version>
   <description>This package contains Acados+ROS2 based implementation</description>
-  <maintainer email="harshjmodi1996@gmail.com">Harsh Modi</maintainer>
+  <maintainer email="anonymous@anonymous.com">anonymous</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>ament_copyright</test_depend>
