@@ -17,7 +17,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='harshmodi',
-    maintainer_email='harsh.modi@tamu.edu',
+    maintainer_email='anonymous@anonymous.edu',
     description='A package to control a folding drone which has ability to rotate upper diagonal arm using UXRCE_DDS communication',
     license='Apache-2.0',
     # tests_require=['pytest'],
