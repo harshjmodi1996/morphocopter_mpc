@@ -4,7 +4,7 @@
   <name>folding_drone</name>
   <version>0.0.1</version>
   <description>Package to control folding drone with an ability to rotate the upper diagonal arm</description>
-  <maintainer email="harshjmodi1996@gmail.com">Harsh Modi</maintainer>
+  <maintainer email="anonymous@anonymous.com">anonymous</maintainer>
   <license>Apache-2.0</license>
 
   <test_depend>ament_copyright</test_depend>
