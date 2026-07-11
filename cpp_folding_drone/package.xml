@@ -5,7 +5,7 @@
   <version>0.0.1</version>
   <description>Attitude controller for the folding drone UAV using PX4 offboard control.</description>
 
-  <maintainer email="harshjmodi1996@gmail.com">Harsh Modi</maintainer>
+  <maintainer email="anonymous@anonymous.com">anonymous</maintainer>
   <license>MIT</license>
 
   <!-- Build tool -->
