@@ -87,7 +87,7 @@ Clone `morphocopter_mpc` into your ROS 2 workspace source directory and build wi
 
 ```bash
 cd ~/<your_ros2_ws>/src
-git clone https://github.com/harshjmodi1996/morphocopter_mpc.git
+git clone https://anonymous.4open.science/r/morphocopter_mpc-F896.git
 cd ~/<your_ros2_ws>
 colcon build
 source install/local_setup.bash
